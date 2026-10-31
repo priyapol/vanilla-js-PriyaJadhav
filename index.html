@@ -1,0 +1,211 @@
+<!-- 
+  @Author: Priya Jadhav
+  @Date:   2026-10-31 12:28:54
+  @Last Modified by:   Priya Jadhav
+  @Last Modified time: 2026-10-31 21:43:15
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ecommerce Website for Jackets useful in Rainy , windy weather">
+  <title>Ecommerce Website for Rainy Days Gear</title>
+  <link href="https://fonts.googleapis.com" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://kit.fontawesome.com/10d6e0923a.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="home-page">
+  <header>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a href="index.html" aria-label="Rainy Days home">
+          <img src="images/RainyDays_Logo.png" alt="RainyDays logo" class="logo-img">
+        </a>
+        <div class="desktop-links">
+          <a href="products.html">Shop</a>
+          <div class="dropdown">
+            <a href="#" class="drop-btn">View Collections</a>
+            <div class="dropdown-menu">
+              <a href="products.html?gender=male">Men</a>
+              <a href="products.html?gender=female">Women</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="nav-center">
+        <div class="desktop-links">
+          <div class="search">
+            <input type="text" placeholder="Search" aria-label="Search products">
+          </div>
+        </div>
+      </div>
+
+      <div class="nav-right">
+        <ul class="menu-icons">
+          <li><a href="index.html" aria-label="Home Page"><i class="fa-solid fa-house"></i></a></li>
+          <li><a class="cart-btn" href="cart.html" aria-label="View Cart Page"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i> <span class="cart-count">0</span></a></li>
+          <li><label for="menu-toggle" class="hamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></label></li>
+        </ul>
+      </div>
+
+      <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+      <div class="mobile-overlay">
+        <label for="menu-toggle" class="close-btn">&times;</label>
+        <ul class="mobile-links">
+          <li><a href="products.html">Shop</a></li>
+          <li><a href="products.html?gender=male">Men</a></li>
+          <li><a href="products.html?gender=female">Women</a></li>
+          <li><a href="cart.html">Cart</a></li>
+          <li><hr></li>
+          <li><a href="index.html">Home</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="hero-image">
+      <img src="images/HomePage.jpg" alt="backgroundImage">
+    </div>
+    <div class="hero-section">
+    <div class="hero-content">
+      <h2>Sustainable Style for every storm</h2>
+    </div>
+    <div class="hero-btn">
+      <a href="products.html" class="hero-explore-btn">Explore Now</a>
+    </div>
+    </div>
+
+    <section class="featured-jackets">
+      <div class="featured-header" id="featured-jackets">
+        <h1><span>Featured Jackets</span></h1>
+      </div>
+
+      <div class="jackets-grid" aria-live="polite" aria-busy="true">
+        <p>Loading featured jackets...</p>
+      </div>
+    </section>
+
+    <section class="review-section">
+      <div class="header">
+        <div class="review">★★★★★ Customer Reviews </div>
+      </div>
+
+      <div class="review-wrapper">
+        <button class="nav-arrow left">&lt;</button>
+
+        <div class="review-cards">
+          <div class="review-card">
+            <div class="rating-header">
+              <span class="stars">★★★★★</span>
+              <span class="verified">Confirmed</span>
+            </div>
+            <h4>Vast selection and fast delivery</h4>
+            <p>Vast selection and fast delivery</p>
+            <div class="reviewer-info">
+              <span>Alisha K., 2 hours ago</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="rating-header">
+              <span class="stars">★★★★★</span>
+              <span class="verified">Confirmed</span>
+            </div>
+            <h4>Good prices and good selection</h4>
+            <p>Always good selection, good prices and regular offers</p>
+            <div class="reviewer-info">
+              <span>Jean Mohn, 3 hours ago</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="rating-header">
+              <span class="stars">★★★★★</span>
+              <span class="verified">Confirmed</span>
+            </div>
+            <h4>Good products and fast delivery</h4>
+            <p>Quality is amazing and delivery is fast</p>
+            <div class="reviewer-info">
+              <span>Brian Lien, 3 hours ago</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="rating-header">
+              <span class="stars">★★★★★</span>
+              <span class="verified">Confirmed</span>
+            </div>
+            <h4>The order was quick and cheap</h4>
+            <p>The order was quick and cheap</p>
+            <div class="reviewer-info">
+              <span>Customer, 4 hours ago</span>
+            </div>
+          </div>
+
+          <div class="review-card">
+            <div class="rating-header">
+              <span class="stars">★★★★★</span>
+              <span class="verified">Confirmed</span>
+            </div>
+            <h4>Fast Delivery and Good Quality</h4>
+            <p>Fast Delivery and Good Quality</p>
+            <div class="reviewer-info">
+              <span>Valentina Rose, 5 hours ago</span>
+            </div>
+          </div>
+        </div>
+
+
+        <button class="nav-arrow right">&gt;</button>
+      </div>
+
+      <div class="footer-summary">
+        <p>Rated **4.6/5** based on 94,324 reviews. Showing 4 and 5 star reviews</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h2>About Us</h2>
+        <p>We are a leading Jacket retailer offering the latest fashion trends at affordable prices.</p>
+      </div>
+      <div class="footer-section links">
+        <h2>Quick Links</h2>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="privacy.html">Privacy Policy</a></li>
+          <li><a href="terms.html">Terms of Service</a></li>
+        </ul>
+      </div>
+      <div class="footer-section contact" id="contact">
+        <h2>Contact Us</h2>
+        <p>Email: support@rainydays.com</p>
+        <p>Phone: +123 456 7890</p>
+      </div>
+      <div class="footer-section newsletter">
+        <h2>Newsletter</h2>
+        <p>Get updates on new arrivals and special offers.</p>
+        <form class="newsletter-form">
+          <label class="visually-hidden" for="newsletter-email">Email address</label>
+          <input id="newsletter-email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required>
+          <button type="button">Subscribe</button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      © 2026 RainyDays. All rights reserved.
+    </div>
+  </footer>
+<script src="main.js"></script>
+<script src="products.js"></script>
+<script src="cart.js"></script>
+<script src="checkout.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse all Rainy Days jackets.">
+    <title>All Jackets | Rainy Days</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="products.css">
+    <script src="https://kit.fontawesome.com/10d6e0923a.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="products-page">
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="index.html" aria-label="Rainy Days home">
+                    <img src="images/RainyDays_Logo.png" alt="RainyDays logo" class="logo-img">
+                </a>
+                <div class="desktop-links">
+                    <a href="products.html">Shop</a>
+                    <div class="dropdown">
+                        <a href="#" class="drop-btn">View Collections</a>
+                        <div class="dropdown-menu">
+                            <a href="products.html?gender=male">Men</a>
+                            <a href="products.html?gender=female">Women</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-center">
+                <div class="desktop-links">
+                    <div class="search">
+                        <input type="text" placeholder="Search" aria-label="Search products">
+                    </div>
+                </div>
+            </div>
+            <div class="nav-right">
+                <ul class="menu-icons">
+                    <li><a href="index.html" aria-label="Home Page"><i class="fa-solid fa-house"></i></a></li>
+                    <li><a class="cart-btn" href="cart.html" aria-label="View Cart Page"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i> <span class="cart-count">0</span></a></li>
+                    <li><label for="menu-toggle" class="hamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></label></li>
+                </ul>
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <div class="mobile-overlay">
+                <label for="menu-toggle" class="close-btn" aria-label="Close menu">&times;</label>
+                <ul class="mobile-links">
+                    <li><a href="products.html">Shop</a></li>
+                    <li><a href="products.html?gender=male">Men</a></li>
+                    <li><a href="products.html?gender=female">Women</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><hr></li>
+                    <li><a href="index.html">Home</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <div class="products-header">
+            <h1>All Jackets</h1>
+            <p>Explore the full Rainy Days collection.</p>
+        </div>
+        <section id="product-container" class="products-grid" aria-label="All jackets" aria-live="polite" aria-busy="true">
+            <p>Loading products...</p>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>We are a leading Jacket retailer offering the latest fashion trends at affordable prices.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact" id="contact">
+                <h2>Contact Us</h2>
+                <p>Email: support@rainydays.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="footer-section newsletter">
+                <h2>Newsletter</h2>
+                <p>Get updates on new arrivals and special offers.</p>
+                <form class="newsletter-form">
+                    <label class="visually-hidden" for="newsletter-email">Email address</label>
+                    <input id="newsletter-email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required>
+                    <button type="button">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 RainyDays. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+    <script src="products.js"></script>
+    <script src="cart.js"></script>
+    <script src="checkout.js"></script>
+</body>
+
+</html>

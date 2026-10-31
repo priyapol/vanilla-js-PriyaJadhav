@@ -1,0 +1,76 @@
+.order-confirmation-page {
+  min-height: 100vh;
+  margin: 0;
+  background: #e3eef1;
+  color: #071b20;
+}
+
+.content {
+  width: min(900px, calc(100% - 40px));
+  min-height: calc(100vh - 112px);
+  margin: 0 auto;
+  padding: 148px 0 52px;
+}
+
+.purchase-message h1 {
+  margin: 0 0 38px;
+  color: #071b20;
+  font-size: clamp(30px, 5vw, 44px);
+  text-align: center;
+}
+
+.subtitle {
+  margin: 0;
+  color: #071b20;
+  font-size: clamp(16px, 2.2vw, 22px);
+  font-weight: 700;
+  line-height: 1.4;
+  text-align: center;
+  text-decoration: underline;
+}
+
+.continue-shopping-wrapper {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.continue-btn {
+  display: inline-block;
+  min-width: 290px;
+  padding: 12px 24px;
+  border-radius: 6px;
+  background: #0a4253;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.continue-btn:hover,
+.continue-btn:focus-visible {
+  background: #176f88;
+}
+
+.continue-btn:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+@media (max-width: 560px) {
+  .content {
+    width: min(100% - 28px, 900px);
+  }
+
+  .purchase-message h1 {
+    margin-bottom: 26px;
+    font-size: clamp(26px, 8vw, 36px);
+  }
+
+  .continue-btn {
+    min-width: 0;
+    width: 100%;
+    font-size: 17px;
+  }
+}
