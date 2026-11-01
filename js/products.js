@@ -5,7 +5,7 @@ const searchInput = document.getElementById("product-search") ||
 const isFeaturedGrid = Boolean(
     productContainer?.matches(".jackets-grid")
 );
-const featuredTitle = document.querySelector(".featured-header h1 span");
+const featuredTitle = document.querySelector(".featured-header h2 span");
 const featuredSubtitle = document.querySelector(".featured-header p");
 const catalogTitle = document.querySelector(".products-header h1");
 const catalogSubtitle = document.querySelector(".products-header p");
