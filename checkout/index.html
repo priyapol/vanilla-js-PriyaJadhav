@@ -80,66 +80,31 @@
                 </div>
                 <fieldset class="checkout-options" aria-labelledby="delivery-method-heading">
                     <h3 id="delivery-method-heading" class="checkout-options-heading">Delivery method</h3>
-                    <label class="checkout-option" for="delivery-standard">
-                        <input id="delivery-standard" name="delivery" type="radio" value="standard" checked>
-                        <span class="checkout-option-copy">
-                            <strong>Standard delivery</strong>
-                            <small>3–5 business days</small>
-                        </span>
-                        <strong class="checkout-option-price">5.99 NOK</strong>
-                    </label>
-                    <label class="checkout-option" for="delivery-express">
-                        <input id="delivery-express" name="delivery" type="radio" value="express">
-                        <span class="checkout-option-copy">
-                            <strong>Express delivery</strong>
-                            <small>1–2 business days</small>
-                        </span>
-                        <strong class="checkout-option-price">12.99 NOK</strong>
-                    </label>
                     <label class="checkout-option" for="delivery-pickup">
-                        <input id="delivery-pickup" name="delivery" type="radio" value="pickup">
+                        <input id="delivery-pickup" name="delivery" type="radio" value="pickup" checked>
                         <span class="checkout-option-copy">
-                            <strong>Free pickup</strong>
-                            <small>Collect your order</small>
+                            <span class="checkout-option-title">Free pickup</span>
+                            <span class="checkout-option-description">Collect your order</span>
                         </span>
-                        <strong class="checkout-option-price">Free</strong>
+                        <span class="checkout-option-price">Free</span>
+                    </label>
+                    <label class="checkout-option" for="delivery-standard">
+                        <input id="delivery-standard" name="delivery" type="radio" value="standard" >
+                        <span class="checkout-option-copy">
+                            <span class="checkout-option-title">Standard delivery</span>
+                            <span class="checkout-option-description">3–5 business days</span>
+                        </span>
+                        <span class="checkout-option-price">5.99 NOK</span>
                     </label>
                 </fieldset>
-                <fieldset class="checkout-options payment-options" aria-labelledby="payment-method-heading">
-                    <h3 id="payment-method-heading" class="checkout-options-heading">Payment method</h3>
-                    <label class="checkout-option" for="payment-card">
-                        <input id="payment-card" name="payment" type="radio" value="Debit/Credit card" checked>
-                        <span class="checkout-option-copy">
-                            <strong>Debit/Credit card</strong>
-                            <small>Demo card form</small>
-                        </span>
-                    </label>
-                </fieldset>
-                <fieldset class="checkout-options card-details-options" aria-label="Card details">
-                    <div class="checkout-field-grid">
-                        <div class="checkout-field checkout-field-full">
-                            <label for="demo-card-number">Card number</label>
-                            <input id="demo-card-number" type="text" inputmode="numeric" pattern="[0-9 ]{13,23}" maxlength="23" autocomplete="off" data-demo-card-field required>
-                        </div>
-                        <div class="checkout-field">
-                            <label for="demo-card-expiry">Expiry date</label>
-                            <input id="demo-card-expiry" type="text" inputmode="numeric" placeholder="MM/YY" pattern="(0[1-9]|1[0-2])\/[0-9]{2}" maxlength="5" autocomplete="off" data-demo-card-field required>
-                        </div>
-                        <div class="checkout-field">
-                            <label for="demo-card-cvv">CVV</label>
-                            <input id="demo-card-cvv" type="text" inputmode="numeric" pattern="[0-9]{3,4}" maxlength="4" autocomplete="off" data-demo-card-field required>
-                        </div>
-                    </div>
-                </fieldset>
-                <button class="primary-link checkout-submit" type="submit">Place order</button>
             </form>
             <aside class="order-summary">
                 <h2>Order summary</h2>
                 <div id="checkout-items" class="checkout-items"></div>
-                <p class="summary-total">Subtotal <strong id="checkout-subtotal">$0.00</strong></p>
-                <p class="summary-total delivery-total">Delivery <strong id="checkout-delivery">5.99 NOK</strong></p>
-                <p class="summary-total grand-total">Total <strong id="checkout-total">0.00 NOK</strong></p>
-                <a class="secondary-link" href="../cart.html">Return to cart</a>
+                <p class="summary-total">Subtotal <span class="summary-total-value" id="checkout-subtotal">$0.00</span></p>
+                <p class="summary-total delivery-total">Delivery <span class="summary-total-value" id="checkout-delivery">5.99 NOK</span></p>
+                <p class="summary-total grand-total">Total <span class="summary-total-value" id="checkout-total">0.00 NOK</span></p>
+                <button class="primary-link checkout-submit" type="submit" form="checkout-form" id="checkout-submit">Place order</button>
             </aside>
         </div>
     </main>

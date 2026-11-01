@@ -216,6 +216,28 @@ nav li i:hover,
   vertical-align: middle;
 }
 
+.api-retry-button {
+  margin-top: 12px;
+  padding: 9px 16px;
+  border: 0;
+  border-radius: 6px;
+  background: #0a4253;
+  color: #fff;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.api-retry-button:hover,
+.api-retry-button:focus-visible {
+  background: #176f88;
+}
+
+.api-retry-button:focus-visible {
+  outline: 3px solid #8eccdf;
+  outline-offset: 3px;
+}
+
 .footer {
   background: linear-gradient(135deg, #0a4253 0%, #073746 100%);
   color: #fff;

@@ -45,6 +45,28 @@ function createLoadingIndicator(message) {
     return indicator;
 }
 
+function getProductApiErrorMessage(error, contentName) {
+    if (error instanceof TypeError) {
+        return "Could not connect to the product service. Your browser or network may be blocking the request. Check your connection and try again.";
+    }
+
+    if (error instanceof Error && error.message.startsWith("HTTP ")) {
+        return "The product service returned " + error.message +
+            ". Please try again later.";
+    }
+
+    return "Unable to load " + contentName + " right now. Please try again.";
+}
+
+function createApiRetryButton(onRetry) {
+    const button = document.createElement("button");
+    button.className = "api-retry-button";
+    button.type = "button";
+    button.textContent = "Try again";
+    button.addEventListener("click", onRetry);
+    return button;
+}
+
 function updateCart() {
     if (!headerCartButton) {
         return;

@@ -195,7 +195,7 @@ async function loadProducts() {
         );
 
         if (!response.ok) {
-            throw new Error("Unable to load products");
+            throw new Error("HTTP " + response.status);
         }
 
         const data = await response.json();
@@ -210,8 +210,13 @@ async function loadProducts() {
 
     } catch (error) {
         console.error("Error loading products:", error);
-        productContainer.textContent =
-            "Unable to load products. Please try again later.";
+        const errorMessage = document.createElement("p");
+        errorMessage.setAttribute("role", "alert");
+        errorMessage.textContent = getProductApiErrorMessage(error, "products");
+        productContainer.replaceChildren(
+            errorMessage,
+            createApiRetryButton(loadProducts)
+        );
     } finally {
         productContainer.setAttribute("aria-busy", "false");
     }

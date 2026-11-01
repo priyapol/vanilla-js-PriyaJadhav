@@ -4,26 +4,32 @@ const checkoutForm = document.getElementById("checkout-form");
 const checkoutConfirmation = document.getElementById("checkout-confirmation");
 const checkoutDelivery = document.getElementById("checkout-delivery");
 const checkoutTotal = document.getElementById("checkout-total");
+const checkoutSubmit = document.getElementById("checkout-submit");
 const ORDER_STORAGE_KEY = "rainy-days-last-order";
-const deliveryFees = {
-    standard: 5.99,
-    express: 12.99,
-    pickup: 0
+const deliveryMethods = {
+    standard: {
+        fee: 5.99,
+        estimate: "3-5 business days"
+    },
+    pickup: {
+        fee: 0,
+        estimate: "Ready for pickup"
+    }
 };
 
-function selectedDeliveryFee() {
+function selectedDeliveryMethod() {
     const selectedMethod = checkoutForm?.querySelector(
         'input[name="delivery"]:checked'
     )?.value;
 
-    return deliveryFees[selectedMethod] ?? deliveryFees.standard;
+    return deliveryMethods[selectedMethod] ? selectedMethod : "standard";
 }
 
 function updateCheckoutTotals(cart) {
     const subtotal = cart.reduce(function (total, item) {
         return total + item.price * item.quantity;
     }, 0);
-    const deliveryFee = selectedDeliveryFee();
+    const deliveryFee = deliveryMethods[selectedDeliveryMethod()].fee;
 
     if (checkoutSubtotal) {
         checkoutSubtotal.textContent = subtotal.toFixed(2) + " NOK";
@@ -49,6 +55,7 @@ function renderCheckout() {
 
     const cart = getCart();
     checkoutItems.innerHTML = "";
+    checkoutSubmit.disabled = cart.length === 0;
 
     cart.forEach(function (item) {
         checkoutItems.appendChild(createOrderSummaryItem(item));
@@ -84,17 +91,11 @@ if (checkoutForm) {
             return;
         }
 
-        const formData = new FormData(checkoutForm);
-        const deliveryMethod = formData.get("delivery");
-        const totals = updateCheckoutTotals(cart);
-        const deliveryEstimate = {
-            standard: "3-5 business days",
-            express: "1-2 business days",
-            pickup: "Ready for pickup"
-        }[deliveryMethod] || "3-5 business days";
+        const deliveryMethod = selectedDeliveryMethod();
+        updateCheckoutTotals(cart);
         const order = {
             orderId: "RD-" + Date.now().toString(36).toUpperCase(),
-            deliveryEstimate: deliveryEstimate
+            deliveryEstimate: deliveryMethods[deliveryMethod].estimate
         };
 
         try {
@@ -107,9 +108,6 @@ if (checkoutForm) {
             return;
         }
 
-        checkoutForm.querySelectorAll("[data-demo-card-field]").forEach(function (input) {
-            input.value = "";
-        });
         saveCart([]);
         window.location.href = "confirmation/index.html";
     });

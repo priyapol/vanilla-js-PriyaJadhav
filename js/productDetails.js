@@ -6,6 +6,8 @@ const priceDetails = document.getElementById("details-price");
 const descriptionDetails = document.getElementById("details-description");
 const sizeSelect = document.getElementById("product-size");
 const cartButton = document.querySelector("#product-details .add-cart-btn");
+const cartMessage = document.getElementById("cart-message");
+let cartMessageTimeout;
 
 function showDetailsMessage(indicator, message, isError) {
     indicator.classList.toggle("loading-error", isError);
@@ -24,6 +26,7 @@ async function loadProductDetails() {
     }
 
     const detailsCard = productDetails.querySelector(".product-details-card");
+    productDetails.querySelector(".loading-indicator")?.remove();
     const loadingIndicator = createLoadingIndicator("Loading product details...");
     detailsCard.hidden = true;
     productDetails.setAttribute("aria-busy", "true");
@@ -43,7 +46,7 @@ async function loadProductDetails() {
     try {
         const response = await fetch("https://v2.api.noroff.dev/rainy-days");
         if (!response.ok) {
-            throw new Error("Error fetching product details");
+            throw new Error("HTTP " + response.status);
         }
 
         const payload = await response.json();
@@ -98,6 +101,12 @@ async function loadProductDetails() {
             }
 
             addToCart(product, sizeSelect.value);
+            cartMessage.textContent = "Added to cart.";
+            cartMessage.hidden = false;
+            window.clearTimeout(cartMessageTimeout);
+            cartMessageTimeout = window.setTimeout(function () {
+                cartMessage.hidden = true;
+            }, 1000);
             cartButton.textContent = "Added to Cart";
 
             window.setTimeout(function () {
@@ -111,8 +120,11 @@ async function loadProductDetails() {
         console.error("Unable to load product details:", error);
         showDetailsMessage(
             loadingIndicator,
-            "Unable to load product details. Please try again later.",
+            getProductApiErrorMessage(error, "product details"),
             true
+        );
+        loadingIndicator.appendChild(
+            createApiRetryButton(loadProductDetails)
         );
     } finally {
         productDetails.setAttribute("aria-busy", "false");
