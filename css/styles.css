@@ -53,7 +53,7 @@ body {
   gap: 50px;
   color: rgb(247, 242, 242);
   text-decoration: none;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: bold;
 }
 
@@ -68,7 +68,7 @@ body {
 
 .drop-btn {
   font-weight: bold;
-  font-size: 24px;
+  font-size: 20px;
   color: rgb(247, 242, 242);
   cursor: pointer;
 }
@@ -91,7 +91,7 @@ body {
 
 .dropdown-menu a {
   padding: 10px 16px;
-  font-size: 24px;
+  font-size: 20px;
   color: rgb(247, 242, 242);
   display: block;
 }
