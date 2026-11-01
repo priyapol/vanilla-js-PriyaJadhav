@@ -2,9 +2,9 @@
 
 ## Tool and Period
 
-- **Tool:** OpenAI ChatGPT
-- **Period:** October 2026
-- **Project:** Rainy Days – JavaScript Course Assignment
+- Tool : OpenAI ChatGPT
+- Period : October 2026
+- Project : Rainy Days – JavaScript Course Assignment
 
 ## Scope of Assistance
 
