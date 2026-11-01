@@ -8,7 +8,7 @@
 .shopping-page > h1 {
   margin: 0 0 28px;
   color: #123b48;
-  font-size: clamp(30px, 4vw, 42px);
+  font-size: 36px;
   text-align: left;
 }
 

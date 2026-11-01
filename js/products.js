@@ -10,7 +10,10 @@ const featuredSubtitle = document.querySelector(".featured-header p");
 const catalogTitle = document.querySelector(".products-header h1");
 const catalogSubtitle = document.querySelector(".products-header p");
 const selectedGender = new URLSearchParams(window.location.search)
-    .get("gender")?.trim().toLowerCase() || "";
+    .get("gender")?.trim().toLowerCase() ||
+    productContainer?.dataset.gender?.trim().toLowerCase() || "";
+const productDetailsPath =
+    productContainer?.dataset.productDetailsPath || "product/index.html";
 let showAllProducts = Boolean(selectedGender);
 
 function updateProductsHeading(showAll = showAllProducts) {
@@ -106,7 +109,8 @@ function renderProducts(productList) {
         if (isFeaturedGrid) {
             const card = document.createElement("article");
             card.className = "jacket-card";
-            const productUrl = "view-product.html?id=" + encodeURIComponent(product.id);
+            const productUrl = productDetailsPath + "?id=" +
+                encodeURIComponent(product.id);
 
             const link = document.createElement("a");
             link.className = "product-image-link";
@@ -163,7 +167,7 @@ function renderProducts(productList) {
 
         const viewMoreLink = document.createElement("a");
         viewMoreLink.className = "view-more-btn";
-        viewMoreLink.href = "view-product.html?id=" +
+        viewMoreLink.href = productDetailsPath + "?id=" +
             encodeURIComponent(product.id);
         viewMoreLink.textContent = "View More";
 
@@ -229,7 +233,7 @@ if (productContainer) {
         const card = event.target.closest(".product-card");
 
         if (card) {
-            window.location.href = "view-product.html?id=" +
+            window.location.href = productDetailsPath + "?id=" +
                 encodeURIComponent(card.dataset.productId);
         }
     });
@@ -242,7 +246,7 @@ if (productContainer) {
         ) {
             event.preventDefault();
 
-            window.location.href = "view-product.html?id=" +
+            window.location.href = productDetailsPath + "?id=" +
                 encodeURIComponent(event.target.dataset.productId);
         }
     });

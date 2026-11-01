@@ -111,6 +111,6 @@ if (checkoutForm) {
             input.value = "";
         });
         saveCart([]);
-        window.location.href = "order-confirmation.html";
+        window.location.href = "confirmation/index.html";
     });
 }

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details | Rainy Days</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/viewProduct.css">
+    <script src="https://kit.fontawesome.com/10d6e0923a.js" crossorigin="anonymous"></script>
+</head>
+
+<body class="product-page">
+    <header>
+        <nav class="navbar">
+            <div class="nav-left">
+                <a href="../index.html" aria-label="Rainy Days home">
+                    <img src="../images/RainyDays_Logo.png" alt="RainyDays logo" class="logo-img">
+                </a>
+                <div class="desktop-links">
+                    <a href="../products.html">Shop All</a>
+                    <div class="dropdown">
+                        <a href="#" class="drop-btn">Shop by Category</a>
+                        <div class="dropdown-menu">
+                            <a href="../category/mens-clothing.html">Men</a>
+                            <a href="../category/womens-clothing.html">Women</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nav-center">
+                <div class="desktop-links">
+                    <div class="search">
+                        <input type="text" placeholder="Search" aria-label="Search products">
+                    </div>
+                </div>
+            </div>
+            <div class="nav-right">
+                <ul class="menu-icons">
+                    <li><a href="../index.html" aria-label="Home Page"><i class="fa-solid fa-house"></i></a></li>
+                    <li><a class="cart-btn" href="../cart.html" aria-label="View Cart Page"><i class="fa-solid fa-cart-shopping" aria-hidden="true"></i> <span class="cart-count">0</span></a></li>
+                    <li><label for="menu-toggle" class="hamburger" aria-label="Open menu"><i class="fa-solid fa-bars"></i></label></li>
+                </ul>
+            </div>
+            <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+            <div class="mobile-overlay">
+                <label for="menu-toggle" class="close-btn" aria-label="Close menu">&times;</label>
+                <ul class="mobile-links">
+                    <li><a href="../products.html">Shop All</a></li>
+                    <li><a href="../category/mens-clothing.html">Men</a></li>
+                    <li><a href="../category/womens-clothing.html">Women</a></li>
+                    <li><a href="../cart.html">Cart</a></li>
+                    <li><hr></li>
+                    <li><a href="../index.html">Home</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="product-details" id="product-details">
+        <a class="back-to-products" href="../products.html">Back to products</a>
+        <article class="product-details-card">
+            <img id="details-image" src="" alt="">
+            <div class="details-info">
+                <span id="details-category" class="category-badge"></span>
+                <h1 id="details-name">Loading product...</h1>
+                <p id="details-price" class="price"></p>
+                <p id="details-description"></p>
+                <div class="size-selector">
+                    <label for="product-size">Size</label>
+                    <select id="product-size" name="size" required>
+                        <option value="">Select a size</option>
+                    </select>
+                </div>
+                <button type="button" class="add-cart-btn">Add to Cart</button>
+            </div>
+        </article>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section about">
+                <h2>About Us</h2>
+                <p>We are a leading Jacket retailer offering the latest fashion trends at affordable prices.</p>
+            </div>
+            <div class="footer-section links">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                    <li><a href="../privacy.html">Privacy Policy</a></li>
+                    <li><a href="../terms.html">Terms of Service</a></li>
+                </ul>
+            </div>
+            <div class="footer-section contact" id="contact">
+                <h2>Contact Us</h2>
+                <p>Email: support@rainydays.com</p>
+                <p>Phone: +123 456 7890</p>
+            </div>
+            <div class="footer-section newsletter">
+                <h2>Newsletter</h2>
+                <p>Get updates on new arrivals and special offers.</p>
+                <form class="newsletter-form">
+                    <label class="subsribe-email" for="newsletter-email">Email address</label>
+                    <input id="newsletter-email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required>
+                    <button type="button">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © 2026 RainyDays. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/productDetails.js"></script>
+</body>
+
+</html>

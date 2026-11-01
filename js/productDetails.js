@@ -33,7 +33,7 @@ async function loadProductDetails() {
     if (!productId) {
         showDetailsMessage(
             loadingIndicator,
-            "No product was selected. Return to the products page and choose a product.",
+            "No product was selected. choose a product from the products page.",
             true
         );
         productDetails.setAttribute("aria-busy", "false");
@@ -43,7 +43,7 @@ async function loadProductDetails() {
     try {
         const response = await fetch("https://v2.api.noroff.dev/rainy-days");
         if (!response.ok) {
-            throw new Error("Unable to fetch products");
+            throw new Error("Error fetching product details");
         }
 
         const payload = await response.json();
@@ -58,7 +58,7 @@ async function loadProductDetails() {
         if (!product) {
             showDetailsMessage(
                 loadingIndicator,
-                "Product not found. Return to the products page to choose another product.",
+                "Product not found. choose a product from the products page.",
                 true
             );
             return;

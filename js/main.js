@@ -13,21 +13,13 @@ function productIsDiscounted(product) {
         product.discountedPrice < product.price;
 }
 
-function productPrice(product) {
-    if (product.onSale && product.discountedPrice < product.price) {
-        return product.discountedPrice;
-    }
-
-    return product.price;
-}
-
 function renderProductPrice(priceElement, product) {
     priceElement.innerHTML = "";
 
-    if (product.onSale && product.discountedPrice < product.price) {
+    if (productIsDiscounted(product)) {
         priceElement.innerHTML =
-            '<del class="price-original">' + product.price.toFixed(2) + ' NOK</del> ' +
-            '<strong class="price-discount">' + product.discountedPrice.toFixed(2) + ' NOK</strong> ' +
+            '<span class="price-original">' + product.price.toFixed(2) + ' NOK</span> ' +
+            '<span class="price-discount">' + product.discountedPrice.toFixed(2) + ' NOK</span> ' +
             '<span class="price-sale-label">Sale</span>';
     } else {
         priceElement.textContent = product.price.toFixed(2) + " NOK";
@@ -262,7 +254,16 @@ function createOrderSummaryItem(item) {
 
 document.addEventListener("DOMContentLoaded", function () {
     updateCart();
-    renderCart();
-    renderCheckout();
-    loadProducts();
+
+    if (typeof renderCart === "function") {
+        renderCart();
+    }
+
+    if (typeof renderCheckout === "function") {
+        renderCheckout();
+    }
+
+    if (typeof loadProducts === "function") {
+        loadProducts();
+    }
 });

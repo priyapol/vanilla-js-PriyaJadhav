@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Your Cart | Rainy Days</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="shopping.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/shopping.css">
     <script src="https://kit.fontawesome.com/10d6e0923a.js" crossorigin="anonymous"></script>
 </head>
 
@@ -18,12 +18,12 @@
                     <img src="images/RainyDays_Logo.png" alt="RainyDays logo" class="logo-img">
                 </a>
                 <div class="desktop-links">
-                    <a href="products.html">Shop</a>
+                    <a href="products.html">Shop All</a>
                     <div class="dropdown">
-                        <a href="#" class="drop-btn">View Collections</a>
+                        <a href="#" class="drop-btn">Shop by Category</a>
                         <div class="dropdown-menu">
-                            <a href="products.html?gender=male">Men</a>
-                            <a href="products.html?gender=female">Women</a>
+                            <a href="category/mens-clothing.html">Men</a>
+                            <a href="category/womens-clothing.html">Women</a>
                         </div>
                     </div>
                 </div>
@@ -46,9 +46,9 @@
             <div class="mobile-overlay">
                 <label for="menu-toggle" class="close-btn" aria-label="Close menu">&times;</label>
                 <ul class="mobile-links">
-                    <li><a href="products.html">Shop</a></li>
-                    <li><a href="products.html?gender=male">Men</a></li>
-                    <li><a href="products.html?gender=female">Women</a></li>
+                    <li><a href="products.html">Shop All</a></li>
+                    <li><a href="category/mens-clothing.html">Men</a></li>
+                    <li><a href="category/womens-clothing.html">Women</a></li>
                     <li><a href="cart.html">Cart</a></li>
                     <li><hr></li>
                     <li><a href="index.html">Home</a></li>
@@ -66,7 +66,7 @@
                 <div id="cart-summary-items" class="checkout-items" aria-label="Products in your order"></div>
                 <p class="summary-total">Subtotal <strong id="cart-subtotal">0.00 NOK</strong></p>
                 <p class="summary-note">Shipping and taxes are calculated at checkout.</p>
-                <a id="checkout-link" class="primary-link" href="checkout.html">Continue to checkout</a>
+                <a id="checkout-link" class="primary-link" href="checkout/index.html">Continue to checkout</a>
                 <a class="secondary-link" href="index.html">Continue shopping</a>
             </aside>
         </div>
@@ -96,7 +96,7 @@
                 <h2>Newsletter</h2>
                 <p>Get updates on new arrivals and special offers.</p>
                 <form class="newsletter-form">
-                    <label class="visually-hidden" for="newsletter-email">Email address</label>
+                    <label class="subsribe-email" for="newsletter-email">Email address</label>
                     <input id="newsletter-email" name="email" type="email" placeholder="Enter your email" autocomplete="email" required>
                     <button type="button">Subscribe</button>
                 </form>
@@ -107,10 +107,8 @@
         </div>
     </footer>
 
-    <script src="main.js"></script>
-    <script src="products.js"></script>
-    <script src="cart.js"></script>
-    <script src="checkout.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cart.js"></script>
 </body>
 
 </html>

@@ -6,7 +6,7 @@
 }
 
 .terms-content {
-  padding: clamp(24px, 5vw, 52px);
+  padding: 38px;
   border: 1px solid rgba(10, 66, 83, 0.12);
   border-radius: 16px;
   background: #fff;
@@ -16,7 +16,7 @@
 .terms-content h1 {
   margin: 0 0 12px;
   color: #123b48;
-  font-size: clamp(30px, 4vw, 42px);
+  font-size: 36px;
   text-align: left;
 }
 

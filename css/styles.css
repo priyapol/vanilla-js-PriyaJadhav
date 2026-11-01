@@ -12,7 +12,7 @@ body {
   background-color: #e3eef1;
 }
 
-.visually-hidden {
+.subsribe-email {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -227,7 +227,7 @@ nav li i:hover,
 .footer-content {
   display: grid;
   grid-template-columns: 1.15fr 0.8fr 1fr 1.45fr;
-  gap: clamp(24px, 4vw, 56px);
+  gap: 40px;
   width: min(1240px, 100%);
   margin: 0 auto;
   padding: 48px 32px;
