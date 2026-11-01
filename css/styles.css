@@ -177,6 +177,10 @@ nav li {
   transition: .2s
 }
 
+.menu-icons li {
+  padding: 0;
+}
+
 nav li i:hover,
 .nav-left a:hover,
 .logo-img:hover {
@@ -730,6 +734,12 @@ nav li i:hover,
   .nav-left {
     gap: 20px;
   }
+
+  .footer-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 32px;
+    padding: 40px 28px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -772,7 +782,9 @@ nav li i:hover,
   }
 
   .mobile-links li {
+    display: block;
     margin-bottom: 20px;
+    padding: 0;
   }
 
   .mobile-links a {
@@ -797,19 +809,45 @@ nav li i:hover,
     right: 0;
   }
 
-  .footer-content {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 32px;
-    padding: 40px 28px;
-  }
-
   .footer-section {
     width: auto;
     margin-bottom: 0;
   }
 
   .hero-section {
-    display: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .hero-image img {
+    height: 360px;
+    object-fit: cover;
+  }
+
+  .hero-content {
+    position: static;
+    max-width: calc(100% - 20px);
+    padding: 16px 18px;
+    transform: none;
+  }
+
+  .hero-content h2 {
+    font-size: 24px;
+  }
+
+  .hero-btn {
+    position: static;
+    max-width: 100%;
+  }
+
+  .hero-explore-btn {
+    margin-top: 0;
+    padding: 12px 18px;
+    font-size: 16px;
   }
 
   .hero-btn {
@@ -862,5 +900,26 @@ nav li i:hover,
   .footer-bottom {
     padding: 16px;
     font-size: 12px;
+  }
+
+  .hero-section {
+    padding: 16px;
+  }
+
+  .hero-image img {
+    height: 300px;
+  }
+
+  .hero-content {
+    max-width: 100%;
+    padding: 12px 14px;
+  }
+
+  .hero-content h2 {
+    font-size: 20px;
+  }
+
+  .jackets-grid {
+    grid-template-columns: minmax(0, 1fr);
   }
 }

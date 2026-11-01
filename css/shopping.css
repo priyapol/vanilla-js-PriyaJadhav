@@ -321,7 +321,7 @@
   text-align: left;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 850px) {
   .shopping-page {
     padding: 132px 18px 48px;
   }
